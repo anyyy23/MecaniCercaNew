@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import ServiceSelector from "@/components/ServiceSelector";
 export default function Home(){
   return(
     <main className="w-full pt-20 bg-surface flex-1">
@@ -28,6 +29,7 @@ export default function Home(){
           </div>
        
         </div>
+        <ServiceSelector />
       <Hero />
     </main>
   );
