@@ -1,8 +1,10 @@
+import Image from "next/image";
+
 function SocialProof({name, description, imagen, llegadaEstimada ,cost, contacto1, contacto2}){
     return(
         <article className="rounded-xl font-bold bg-[#fafaff] text-black px-5 w-100 border border-gray-300 shadow-md">
             <div className=" flex flex-row w-full items-center ">
-            <img className="flex w-30 h-25 mt-8 mr-3" src={imagen} />
+            <Image className="flex w-30 h-25 mt-8 mr-3 rounded-lg" src={imagen} alt={name} width={120} height={100} />
           
             <h3 className="text-2xl font-bold ml-2">
              {name}   
@@ -57,7 +59,7 @@ export default function socialProof(){
                
             </h2>
             <div className="pt-0 grid gap-10 md:grid-cols-3 mt-2 mb-10">
-                <SocialProof name="Doña Tere & Hnos." description="Vulcanizadora express 24/7." imagen={"/img/mecanica2.jpg"} cost="$350" llegadaEstimada="15-20 min"   />
+                <SocialProof name="Doña Tere & Hnos." description="Vulcanizadora express 24/7." imagen={"/img/mecanica3.jpg"} cost="$350" llegadaEstimada="15-20 min"   />
                 <SocialProof name="Taller Jesús Morales" description="Mecánico a domicilio & baterías." imagen={"/img/mecanico3.jpg"} cost="$180-220" llegadaEstimada="12-15 min"/>
                 <SocialProof name="Talachas San. Mateo" description="Refaccionaria & Asistencia Biker." imagen={"/img/mecanico2.jpg"} cost="$280" llegadaEstimada="8-10 min"/>
             </div>

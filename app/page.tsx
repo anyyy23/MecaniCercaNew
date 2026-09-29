@@ -9,7 +9,7 @@ export default function Home(){
         <Navbar />
         <div className="w-full max-w-8xl px-4 mx-auto sm:px-8 my-6">
 
-          <div className=" bg-gradient-to-r from-blue-950 to-blue-700 text-white p-8 rounded-2xl flex flex-col gap-6 shadow-xl">
+          <div className=" bg-gradient-to-r from-blue-950 to-blue-700 text-white p-8 rounded-2xl flex flex-col gap-6 shadow-2xl">
             
             <div className="flex items-center justify-between">
             <div className="space-y-3 text-left py-7"> 
