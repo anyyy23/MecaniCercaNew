@@ -1,5 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import SocialProof from "@/components/socialProof";
+import ServiceSelector from "@/components/ServiceSelector";
 export default function Home(){
   return(
     <main className="w-full pt-2 bg-surface flex-1">
@@ -41,7 +43,7 @@ export default function Home(){
        
         </div>
         <ServiceSelector />
-      <Hero />
+      {/*<Hero /> */}
       <section className="px-10">
         <h1 className="text-black text-4xl font-bold px-10">
           Prestadores de Auxilio en Tiempo Real 
