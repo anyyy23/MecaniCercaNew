@@ -40,7 +40,7 @@ export default function Home() {
         </div>
       </div>
       <ServiceSelector />
-      <Hero />
+      {/* <Hero /> */}
       <section className="px-10">
         <h1 className="text-black text-4xl font-bold px-10">
           Prestadores de Auxilio en Tiempo Real
