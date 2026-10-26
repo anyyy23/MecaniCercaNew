@@ -1,5 +1,12 @@
+"use client";
 import Link from "next/link";
+import { useState } from "react";
+
 export default function LoginPage() {
+  const [showPassword, setShowPassword] = useState(false);
+  const inputClasses = "w-full rounded-lg border border-outline-variant/30 bg-white px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20 placeholder:text-gray-400 pr-12";
+  const buttonClasses = "flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-4 py-3 font-semibold text-on-primary transition hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed";
+
   return (
     <main className="relative flex min-h-screen items-center overflow-hidden justify-center bg-background bg-off-white px-6 py-12 text-on-surface">
       <div className="pointer-events-none absolute -top-40 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-blue-400/60 blur-3xl"></div>
@@ -34,7 +41,7 @@ export default function LoginPage() {
                 placeholder="ejemplo@correo.com"
                 autoComplete="email"
                 required
-                className="w-full rounded-lg border border-outline-variant/30 bg-background px-4 py-3 text-sm text-on-surface outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20 placeholder:text-gray-400"
+                className={inputClasses}
               />
             </div>
             <div>
@@ -46,18 +53,29 @@ export default function LoginPage() {
                   ¿Olvidaste tu contraseña?
                 </Link>
               </div>
-              <input
-                id="password"
-                type="password"
-                placeholder="********"
-                autoComplete="current-password"
-                required
-                className="w-full rounded-lg border border-outline-variant/30 bg-background px-4 py-3 text-sm text-on-surface outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20 placeholder:text-gray-400"
-              />
+              <div className="relative">
+                <input
+                  id="password"
+                  type={showPassword ? "text" : "password"}
+                  placeholder="********"
+                  autoComplete="current-password"
+                  required
+                  className={inputClasses}
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword((prev) => !prev)}
+                  className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-on-surface outline-none"
+                >
+                  <span className="material-symbols-rounded text-xl">
+                    {showPassword ? "visibility_off" : "visibility"}
+                  </span>
+                </button>
+              </div>
             </div>
             <button
               type="submit"
-              className="flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-4 py-3 font-semibold text-on-primary transition hover:opacity-90"
+              className={buttonClasses}
             >
               Iniciar sesión
               <span className="material-symbols-rounded text-xl">
@@ -65,6 +83,14 @@ export default function LoginPage() {
               </span>
             </button>
           </form>
+          <div className="mt-6 text-center text-white">
+            <p className="text-sm">
+              ¿No tienes una cuenta aún?{" "}
+              <Link href="/signup" className="font-semibold text-orange-400 hover:underline">
+                Regístrate
+              </Link>
+            </p>
+          </div>
         </div>
         <p className="mt-8 text-center text-xs text-on-surface-variant text-gray-400">
           {new Date().getFullYear()} MecaniCerca. Todos los derechos reservados.
