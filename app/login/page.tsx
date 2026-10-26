@@ -1,4 +1,6 @@
 import Link from "next/link";
+import AuthForm from "@/components/AuthForm";
+<AuthForm mode="login" />;
 export default function LoginPage() {
   return (
     <main className="relative flex min-h-screen items-center overflow-hidden justify-center bg-background bg-off-white px-6 py-12 text-on-surface">
@@ -65,6 +67,16 @@ export default function LoginPage() {
               </span>
             </button>
           </form>
+
+          <p className="mt-5 text-center text-sm text-gray-300">
+            ¿No tienes cuenta?{" "}
+            <Link
+              href="/signup"
+              className="font-semibold text-orange-400 hover:underline"
+            >
+              Regístrate
+            </Link>
+          </p>
         </div>
         <p className="mt-8 text-center text-xs text-on-surface-variant text-gray-400">
           {new Date().getFullYear()} MecaniCerca. Todos los derechos reservados.
