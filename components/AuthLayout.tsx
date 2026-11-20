@@ -35,7 +35,7 @@ export default function AuthLayout({
       </header>
 
       <main className="flex flex-1 items-center justify-center px-4 py-10 text-white">
-        <div className="w-full max-w-[480px] rounded-xl border border-outline-variant/40 bg-surface-container-low p-6 shadow-xl md:p-8 bg-blue-900">
+        <div className="w-full max-w-120 rounded-xl border border-outline-variant/40 bg-surface-container-low p-6 shadow-xl md:p-8 bg-blue-900">
           <div className="mb-6 text-center">
             <h1 className="mb-2 text-2xl font-semibold">{title}</h1>
 
